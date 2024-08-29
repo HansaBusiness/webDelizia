@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "delizia": {
+    "proyDelizia": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/delizia",
+            "outputPath": "dist/proy-delizia",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,12 +39,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "delizia:build:production"
+              "buildTarget": "proyDelizia:build:production"
             },
             "development": {
-              "buildTarget": "delizia:build:development"
+              "buildTarget": "proyDelizia:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,8 +102,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "e6594fb6-ffe5-47a4-9f71-641c39088ee6"
   }
 }
