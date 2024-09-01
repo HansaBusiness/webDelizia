@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { MapaComponent } from './component/mapa/mapa.component';
 import { LoginComponent } from './component/login/login.component';
 import { MenuPrincipalComponent } from './component/menu-principal/menu-principal.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -17,9 +21,13 @@ import { MenuPrincipalComponent } from './component/menu-principal/menu-principa
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    AngularFireModule.initializeApp(environment.configurarFirebase), // Inicializa Firebase
+    AngularFireDatabaseModule // Importa el módulo de la base de datos
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
