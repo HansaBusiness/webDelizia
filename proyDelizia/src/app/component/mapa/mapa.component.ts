@@ -56,7 +56,7 @@ export class MapaComponent implements AfterViewInit {
         break;
       case 'Ejecutando':
         iconUrl = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
-        ani = google.maps.Animation.BOUNCE;
+        ani = google.maps.Animation.DROP;
         break;
       case 'Finalizado':
         iconUrl = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
@@ -79,7 +79,7 @@ export class MapaComponent implements AfterViewInit {
     const infoWindowContent = `
         <div style="background-color: #01b9d6; color: white; padding: 15px; border-radius: 5px;">
           <h3 style="margin: 0;">${location.Nombre}</h3>
-          <p style="margin: 5px 0 0;">Hora Incio : 09:15 <br> Hora Fin : 12:30 <br><br>Estado : En progreso </p>
+          <p style="margin: 5px 0 0;">Hora Incio : 09:15 <br> Hora Fin : 12:30 <br><br>Estado : ${location.Estado} </p>
         </div>
       `;
     const infoWindow = new google.maps.InfoWindow({
