@@ -1,0 +1,28 @@
+html, body, app-root {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .example-container {
+    height: 100%;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    height: 100%; /* Asegura que el sidenav ocupe toda la altura */
+  }
+  
+  mat-sidenav-container {
+    height: 100%; /* Asegura que el contenedor ocupe toda la altura */
+  }
+  
+  mat-sidenav-content {
+    height: 100%; /* Asegura que el contenido ocupe toda la altura */
+  }
+  
+  .content {
+    padding: 16px;
+    height: calc(100% - 64px); /* Ajusta la altura para compensar la altura de la barra de herramientas */
+    overflow: auto; /* Permite que el contenido tenga scroll si es necesario */
+  }
+  

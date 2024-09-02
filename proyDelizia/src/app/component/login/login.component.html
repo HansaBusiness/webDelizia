@@ -1,2 +1,29 @@
+<div class="login-container">
+    <mat-card appearance="outlined">
+      <mat-card-title>Sign In</mat-card-title>
+      <mat-divider></mat-divider>
+      <br><br>
+      <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">            
 
-<p>login works!</p>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Usuario</mat-label>
+            <input style="height: 20px;" matInput placeholder="Ingrese su usuario">
+            <mat-icon matSuffix>account_circle</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput placeholder="Ingrese su contraseña">
+            <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                Contraseña requerida
+            </mat-error>
+            <mat-icon matSuffix>https</mat-icon>
+          </mat-form-field>
+          
+          <button class="stylebutton" style="background-color: #4f38e9; color: white;"  mat-raised-button type="submit" [disabled]="loginForm.invalid" (click)="VerficarUsuario()">Sign In</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
