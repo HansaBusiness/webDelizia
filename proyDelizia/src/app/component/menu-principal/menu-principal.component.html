@@ -1,23 +1,20 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="side" opened style="background-color: #252b3b">      
-      <mat-nav-list style=" padding: 16px; color: white; font-size: 10;">
+      <mat-nav-list style=" padding: 16px; color: white; font-size: 12px;">
 
         <mat-toolbar style="background-color: #252b3b; color: white;">
           <span>Delizia</span>
         </mat-toolbar>
-
-        <img src="assets/user.png" alt="Usuario" width="50">
-        <div>
-          Luis Quisbert Lima
-          <br>
-          lquisbert.hansa.com.bo
+        <mat-divider style="background: rgb(73, 72, 72);">4545</mat-divider>
+        <img src="assets/user.png" alt="Usuario" width="50" style="padding-top: 16px; padding-bottom: 16px;">
+        <div style="padding-bottom: 16px;">
+          <span>Luis Quisbert Lima</span><br>
+          <span>lquisbert&#64;hansa.com.bo</span>
         </div>
-        
-        
-
-        <a mat-list-item href="#">Opción 1</a>
-        <a mat-list-item href="#">Opción 2</a>
-        <a mat-list-item href="#">Opción 3</a>
+        <mat-divider style="background: rgb(73, 72, 72);"></mat-divider>
+        <a mat-list-item href="#">Dashboard</a>
+        <a mat-list-item href="#">Ajustes</a>
+        <a mat-list-item href="#">Cerrar Sesión</a>
       </mat-nav-list>
     </mat-sidenav>
     
@@ -29,13 +26,73 @@
         </button>
         <span>Incio</span>
       </mat-toolbar>
-      <div style="height: 100%;">
+      <div style="height: 100%; padding: 16px;">
         <!-- Resto del contenido -->
-        <p>Aquí va el contenido de la aplicación</p>
-        <p>Aquí va el contenido de la aplicación</p>
-        <p>Aquí va el contenido de la aplicación</p>
-        <p>Aquí va el contenido de la aplicación</p>
-        <p>Aquí va el contenido de la aplicación</p>
+        <p><b>DASHBOARD</b></p>
+
+        <div class="card-container">
+          <mat-card class="example-card">
+            <mat-card-header style="background-color: #e0ece0;">
+              <mat-card-title>Clientes</mat-card-title>
+              <mat-card-subtitle>40</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions style="background-color: #e0ece0;">
+              <button mat-button>Ver mas..</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="example-card">
+            <mat-card-header style="background-color: #feedd9;">
+              <mat-card-title>Productos</mat-card-title>
+              <mat-card-subtitle>320</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions style="background-color: #feedd9;">
+              <button mat-button>Ver mas..</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="example-card">
+            <mat-card-header style="background-color: #e3edf9;">
+              <mat-card-title>Sucursales</mat-card-title>
+              <mat-card-subtitle>60</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions style="background-color: #e3edf9;">
+              <button mat-button>Ver mas..</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      <div class="card-container">
+        <mat-card class="example-card">
+          <mat-card-header style="background-color: #cbbead;">
+            <mat-card-title>Inventarios</mat-card-title>
+            <mat-card-subtitle>70</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions style="background-color: #cbbead;">
+            <button mat-button>Ver mas..</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="example-card">
+          <mat-card-header style="background-color: #f1ce9e;">
+            <mat-card-title>Usuarios</mat-card-title>
+            <mat-card-subtitle>70</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions style="background-color: #f1ce9e;">
+            <button mat-button>Ver mas..</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="example-card">
+          <mat-card-header style="background-color: #f5adad;">
+            <mat-card-title>Ubicacion </mat-card-title>
+            <mat-card-subtitle>Mapas</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions style="background-color: #f5adad;">
+            <button mat-button>Ver mas..</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

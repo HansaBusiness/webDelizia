@@ -2,7 +2,7 @@ html, body, app-root {
     height: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif !important;
-    padding: 16px;
+    /* padding: 16px; */
   }
 
   .roboto {
@@ -11,6 +11,7 @@ html, body, app-root {
   
   .example-container {
     height: 100%;
+    background-color: rgb(250, 245, 245);
   }
   
   mat-sidenav {
@@ -29,5 +30,17 @@ html, body, app-root {
   .content {
     height: calc(100% - 64px); /* Ajusta la altura para compensar la altura de la barra de herramientas */
     overflow: auto; /* Permite que el contenido tenga scroll si es necesario */
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre las tarjetas */
+    gap: 15px;
+    padding-bottom: 15px; /* Espacio entre las tarjetas */
+  }
+  
+  .example-card {
+    flex: 1; /* Hace que cada tarjeta ocupe un tamaño igual */
+    max-width: 33%; /* Limita el ancho máximo de cada tarjeta */
   }
   
