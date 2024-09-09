@@ -11,13 +11,6 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
   constructor(private fb: FormBuilder,private router: Router) {}
-  
-  VerficarUsuario() {
-    console.log('usuario login');
-    // Redirigir a otro componente (por ejemplo, '/home')
-    this.router.navigate(['/menu']);
-  }
-
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -33,4 +26,16 @@ export class LoginComponent implements OnInit {
       // Aquí puedes manejar la autenticación
     }
   }
+
+  VerficarUsuario(): void {
+    // Check if the form is valid before proceeding
+   // if (this.loginForm.valid) {
+      console.log('usuario login', this.loginForm.value);
+      // Redirect to another component (for example, '/menu')
+      this.router.navigate(['/menu']);
+    // } else {
+    //   console.log('Login form is invalid');
+   // }
+  }
+
 }

@@ -44,42 +44,45 @@ export class MapaComponent implements AfterViewInit {
 
   addMarker(location: any) {
     console.log(location);
-    const position = { lat: parseFloat(location.LatitudPlan), lng: parseFloat(location.LongitudPlan) };
+    const position_real = { lat: parseFloat(location.LatitudReal), lng: parseFloat(location.LongitudReal) };
 
     // Determinar el color del marcador en función del campo 'Estado'
-    let iconUrl = '';
+    let iconUrl_real = '';
     let ani;
     switch (location.Estado) {
       case 'Pendiente':
-        iconUrl = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+        iconUrl_real = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
         ani = google.maps.Animation.DROP;
         break;
       case 'Ejecutando':
-        iconUrl = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+        iconUrl_real = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
         ani = google.maps.Animation.DROP;
         break;
-      case 'Finalizado':
-        iconUrl = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+      case 'Esperando Supervisor':
+        iconUrl_real = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
         ani = google.maps.Animation.DROP;
         break;
       default:
-        iconUrl = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+        iconUrl_real = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
         ani = google.maps.Animation.DROP;
         break;
     }
 
     const marker = new google.maps.Marker({
-      position: position,
+      position: position_real,
       map: this.map,
       title: location.Nombre,
-      icon: iconUrl,
+      icon: iconUrl_real,
       animation: ani
     });
 
     const infoWindowContent = `
-        <div style="background-color: #01b9d6; color: white; padding: 15px; border-radius: 5px;">
+        <div style="background-color: #e9e9e9; color: black; padding: 15px; border-radius: 5px;">
           <h3 style="margin: 0;">${location.Nombre}</h3>
-          <p style="margin: 5px 0 0;">Hora Incio : 09:15 <br> Hora Fin : 12:30 <br><br>Estado : ${location.Estado} </p>
+          <p style="margin: 5px 0 0;">Hora Incio : ${location.FechaInicio.substring(11, 16)} <br> Hora Fin : ${location.FechaFin.substring(11, 16)} 
+          <br><br>Estado : <b>${location.Estado} </b>
+          <br>Obs. : ${location.Observacion} 
+          </p>
         </div>
       `;
     const infoWindow = new google.maps.InfoWindow({
@@ -89,5 +92,49 @@ export class MapaComponent implements AfterViewInit {
     marker.addListener('click', () => {
       infoWindow.open(this.map, marker);
     });
+
+
+    // PUNTOS PARA LA UBICACION AGENCIA
+    const position_agencia = { lat: parseFloat(location.LatitudPlan), lng: parseFloat(location.LongitudPlan) };
+
+    const marker_agencia = new google.maps.Marker({
+      position: position_agencia,
+      map: this.map,
+      title: location.Nombre,
+      icon: {
+        url: 'assets/icons/home.png',  //'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+        scaledSize: new google.maps.Size(40, 40)  // Redimensiona el ícono
+      },      
+      animation: google.maps.Animation.DROP
+    });
+
+    const infoWindow_agencia = new google.maps.InfoWindow({
+      content: `<div style="background-color: #01b9d6; color: white; padding: 15px; border-radius: 5px;">
+          <h3 style="margin: 0;">${location.Nombre}</h3>
+        </div>`
+    });
+
+    marker_agencia.addListener('click', () => {
+      infoWindow_agencia.open(this.map, marker_agencia);
+    });
+
+
+    if(location.LatitudReal!='0.0' && location.LongitudReal!='0.0'){
+      const polyline = new google.maps.Polyline({
+        path: [
+          { lat: parseFloat(location.LatitudPlan), lng: parseFloat(location.LongitudPlan) }, // Punto 1
+          { lat: parseFloat(location.LatitudReal), lng: parseFloat(location.LongitudReal) }, // Punto 2
+        ],
+        geodesic: true, // Para que la línea siga la curvatura de la Tierra
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2,
+      });
+  
+      // Añadir la línea al mapa
+      polyline.setMap(this.map);
+    }   
+
   }
 }
+

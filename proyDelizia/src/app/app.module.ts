@@ -20,6 +20,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { app_routing } from './app.router';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppRoutingModule,
     GoogleMapsModule,
     AngularFireModule.initializeApp(environment.configurarFirebase), // Inicializa Firebase
-    AngularFireDatabaseModule // Importa el módulo de la base de datos
+    AngularFireDatabaseModule,
+    app_routing
   ],
   providers: [
     provideAnimationsAsync()
