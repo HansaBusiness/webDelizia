@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './menu-principal.component.css'
 })
 export class MenuPrincipalComponent {
+  selectedComponent: string | null = null;
 
+  selectComponent(component: string) {
+    this.selectedComponent = component;
+  }
 }
+
+

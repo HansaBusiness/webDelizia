@@ -1,23 +1,23 @@
 <mat-sidenav-container class="example-container">
+
     <mat-sidenav #sidenav mode="side" opened style="background-color: #252b3b">      
       <mat-nav-list style=" padding: 16px; color: white; font-size: 12px;">
-
         <mat-toolbar style="background-color: #252b3b; color: white;">
           <span>Delizia</span>
         </mat-toolbar>
-        <mat-divider style="background: rgb(73, 72, 72);">4545</mat-divider>
+        <mat-divider style="background: #494848;">4545</mat-divider>
         <img src="assets/user.png" alt="Usuario" width="50" style="padding-top: 16px; padding-bottom: 16px;">
         <div style="padding-bottom: 16px;">
           <span>Luis Quisbert Lima</span><br>
           <span>lquisbert&#64;hansa.com.bo</span>
         </div>
-        <mat-divider style="background: rgb(73, 72, 72);"></mat-divider>
+        <mat-divider style="background: #494848;"></mat-divider>
         <a mat-list-item href="#">Dashboard</a>
         <a mat-list-item href="#">Ajustes</a>
         <a mat-list-item href="#">Cerrar Sesión</a>
       </mat-nav-list>
     </mat-sidenav>
-    
+
     <mat-sidenav-content>
       <!-- Contenido principal de la aplicación -->
       <mat-toolbar style=" background-color: #1366a4; color: white;">
@@ -25,12 +25,72 @@
           <mat-icon>menu</mat-icon>
         </button>
         <span>Incio</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button>
+          <mat-icon>chat</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>notifications_active</mat-icon>
+        </button>
+        <!-- <img src="assets/user.png" alt="Usuario" width="30" style="padding-top: 16px; padding-bottom: 16px;"> -->
       </mat-toolbar>
+
       <div style="height: 100%; padding: 16px;">
         <!-- Resto del contenido -->
-        <p><b>DASHBOARD</b></p>
+        <!-- <p><b>DASHBOARD</b></p> -->
 
-        <div class="card-container">
+        <div class="menu-container">
+          <button mat-button (click)="selectComponent('inventarios')">
+            <mat-icon>list_alt</mat-icon> Inventarios
+          </button>
+          <button mat-button (click)="selectComponent('clientes')">
+            <mat-icon>group</mat-icon> Nuestros Clientes
+          </button>
+          <button mat-button (click)="selectComponent('productos')">
+            <mat-icon>event_note</mat-icon> Nuestros Productos
+          </button>
+          <button mat-button (click)="selectComponent('sucursales')">
+            <mat-icon>storefront</mat-icon> Sucursales
+          </button>
+          <button mat-button (click)="selectComponent('mapa')">
+            <mat-icon>map</mat-icon> Mapas
+          </button>
+        </div>
+
+        <div class="content-container">
+          <app-inventarios *ngIf="selectedComponent === 'inventarios'"></app-inventarios>
+          <app-clientes *ngIf="selectedComponent === 'clientes'"></app-clientes>
+          <app-productos *ngIf="selectedComponent === 'productos'"></app-productos>
+          <app-sucursales *ngIf="selectedComponent === 'sucursales'"></app-sucursales>
+          <app-mapa *ngIf="selectedComponent === 'mapa'"></app-mapa>
+        </div>
+
+        <!-- <app-mapa></app-mapa> -->
+
+        <!-- <mat-button-toggle-group appearance="standard" multiple>
+          <mat-button-toggle value="home">
+            <mat-icon>home</mat-icon> Home
+          </mat-button-toggle>
+          <mat-button-toggle value="settings">
+            <mat-icon>settings</mat-icon> Settings
+          </mat-button-toggle>
+          <mat-button-toggle value="info">
+            <mat-icon>info</mat-icon> Info
+          </mat-button-toggle>
+        </mat-button-toggle-group> -->
+
+        <!-- <mat-tab-group>
+          <mat-tab label="Pestaña 1">
+            <app-login></app-login>
+          </mat-tab>
+          <mat-tab label="Pestaña 2">
+            <app-mapa style="display: block;"></app-mapa>                        
+          </mat-tab>
+       </mat-tab-group> -->
+
+      
+
+        <!-- <div class="card-container">
           <mat-card class="example-card">
             <mat-card-header style="background-color: #e0ece0;">
               <mat-card-title>Clientes</mat-card-title>
@@ -61,39 +121,56 @@
             </mat-card-actions>
           </mat-card>
         </div>
-      <div class="card-container">
-        <mat-card class="example-card">
-          <mat-card-header style="background-color: #cbbead;">
-            <mat-card-title>Inventarios</mat-card-title>
-            <mat-card-subtitle>70</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-actions style="background-color: #cbbead;">
-            <button mat-button>Ver mas..</button>
-          </mat-card-actions>
-        </mat-card>
 
-        <mat-card class="example-card">
-          <mat-card-header style="background-color: #f1ce9e;">
-            <mat-card-title>Usuarios</mat-card-title>
-            <mat-card-subtitle>70</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-actions style="background-color: #f1ce9e;">
-            <button mat-button>Ver mas..</button>
-          </mat-card-actions>
-        </mat-card>
+        <div class="card-container">
+          <mat-card class="example-card">
+            <mat-card-header style="background-color: #cbbead;">
+              <mat-card-title>Inventarios</mat-card-title>
+              <mat-card-subtitle>70</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions style="background-color: #cbbead;">
+              <button mat-button>Ver mas..</button>
+            </mat-card-actions>
+          </mat-card>
 
-        <mat-card class="example-card">
-          <mat-card-header style="background-color: #f5adad;">
-            <mat-card-title>Ubicacion </mat-card-title>
-            <mat-card-subtitle>Mapas</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-actions style="background-color: #f5adad;">
-            <button mat-button>Ver mas..</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
+          <mat-card class="example-card">
+            <mat-card-header style="background-color: #f1ce9e;">
+              <mat-card-title>Usuarios</mat-card-title>
+              <mat-card-subtitle>70</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions style="background-color: #f1ce9e;">
+              <button mat-button>Ver mas..</button>
+            </mat-card-actions>
+          </mat-card>
 
-      </div>
+          <mat-card class="example-card">
+            <mat-card-header style="background-color: #f5adad;">
+              <mat-card-title>Ubicacion </mat-card-title>
+              <mat-card-subtitle>Mapas</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions style="background-color: #f5adad;">
+              <button mat-button>Ver mas..</button>
+            </mat-card-actions>
+          </mat-card>          
+        </div> -->
+
+      </div>    
+      
+
+
     </mat-sidenav-content>
+
+
   </mat-sidenav-container>
   
+
+
+
+  <!-- <mat-tab-group selectedIndex="0" backgroundColor="primary">
+    <mat-tab label="Pestaña 1">
+      <app-login></app-login>
+    </mat-tab>
+    <mat-tab label="Pestaña 2">
+      <app-mapa></app-mapa>
+    </mat-tab>
+  </mat-tab-group> -->

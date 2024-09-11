@@ -1,17 +1,11 @@
 html, body, app-root {
     height: 100%;
     margin: 0;
-    font-family: 'Roboto', sans-serif !important;
-    /* padding: 16px; */
   }
-
-  .roboto {
-    font-family: "Roboto", sans-serif;
-}
   
   .example-container {
     height: 100%;
-    background-color: rgb(250, 245, 245);
+    background-color: #faf5f5;
   }
   
   mat-sidenav {
@@ -35,12 +29,62 @@ html, body, app-root {
   .card-container {
     display: flex;
     justify-content: space-between; /* Distribuye el espacio entre las tarjetas */
-    gap: 15px;
-    padding-bottom: 15px; /* Espacio entre las tarjetas */
+    gap: 10px;
+    padding-bottom: 10px; /* Espacio entre las tarjetas */
   }
   
   .example-card {
     flex: 1; /* Hace que cada tarjeta ocupe un tamaño igual */
     max-width: 33%; /* Limita el ancho máximo de cada tarjeta */
   }
+
+  .mat-tab-labels {
+    justify-content: center; 
+  }
   
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    /* background-color: #cfcfcf;   */
+    border-radius: 25px;
+  }
+  
+  button {
+    margin: 0 10px; /* Ajusta el espaciado entre los botones */
+    border-radius: 25px;
+    transition: background-color 0.3s ease; /* Suaviza la transición de color */
+  }
+  
+  mat-icon {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+  }
+
+  button:hover {
+    background-color: #1366a4; /* Cambia a un color más claro o diferente cuando el cursor está sobre el botón */
+    color: white; /* Cambia el color del texto si lo deseas */
+  }
+  
+  button:active,
+  button:focus {
+    background-color: #1366a4; /* Cambia el color cuando se selecciona */
+    color: white;
+  }
+  
+  .content-container {
+    /* position: fixed; */   /*para tamaño total*/
+    /* top: 150px; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /*background-color: #f0f0f0;*/ /* Color de fondo para el área de contenido */
+    padding-top: 16px;
+    /* box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); Sombra opcional */
+  }

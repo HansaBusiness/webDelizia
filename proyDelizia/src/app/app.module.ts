@@ -21,15 +21,25 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { app_routing } from './app.router';
+import {MatTabsModule} from '@angular/material/tabs';
+import { InventariosComponent } from './component/inventarios/inventarios.component';
+import { ClientesComponent } from './component/clientes/clientes.component';
+import { ProductosComponent } from './component/productos/productos.component';
+import { SucursalesComponent } from './component/sucursales/sucursales.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapaComponent,
     LoginComponent,
-    MenuPrincipalComponent
+    MenuPrincipalComponent,
+    InventariosComponent,
+    ClientesComponent,
+    ProductosComponent,
+    SucursalesComponent
   ],
   imports: [
+    MatTabsModule,
     MatToolbarModule,
     MatListModule,
     MatSidenavModule,
