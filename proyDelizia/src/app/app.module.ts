@@ -10,22 +10,23 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule} from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatListModule} from '@angular/material/list';
+import { MatToolbarModule} from '@angular/material/toolbar';
 import { app_routing } from './app.router';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule} from '@angular/material/tabs';
 import { InventariosComponent } from './component/inventarios/inventarios.component';
 import { ClientesComponent } from './component/clientes/clientes.component';
 import { ProductosComponent } from './component/productos/productos.component';
 import { SucursalesComponent } from './component/sucursales/sucursales.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SucursalesComponent } from './component/sucursales/sucursales.component
     SucursalesComponent
   ],
   imports: [
+    MatTableModule,
     MatTabsModule,
     MatToolbarModule,
     MatListModule,

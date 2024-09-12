@@ -1,0 +1,9 @@
+/* Cambiar tamaño del texto en las cabeceras de la tabla */
+.cabecera {
+    font-size: 8% !important; /* Forzamos el estilo con !important */
+  }
+  
+  /* Cambiar tamaño del texto en las celdas de la tabla */
+.celda {
+    font-size: 14px !important; /* Forzamos el estilo con !important */
+  }
