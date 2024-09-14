@@ -1,9 +1,55 @@
 /* Cambiar tamaño del texto en las cabeceras de la tabla */
 .cabecera {
-    font-size: 8% !important; /* Forzamos el estilo con !important */
+    font-size: 12px !important;
+    background-color: #f4f1f1 !important; /* Forzamos el estilo con !important */
   }
   
   /* Cambiar tamaño del texto en las celdas de la tabla */
 .celda {
-    font-size: 14px !important; /* Forzamos el estilo con !important */
+    font-size: 12px !important; /* Forzamos el estilo con !important */
+  }
+
+/* COLORES DE LOS ESTADOS */
+  .esperando {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .ejecutando {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .cancelado {
+    color: red;
+    font-weight: bold;
+  }
+
+  .botonBuscar {
+    font-size: 12px;
+    /* background-color: #e41616; */
+    border: 0px solid #807f7f;
+    border-radius: 4px;  /* Opcional: para redondear los bordes */           
+    padding: 0;
+    width: 50%;
+    border-color: #747373;
+    flex-grow: 1;
+  }
+
+
+  .botones-superiores {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    margin-bottom: 1px; /* Opcional: espacio entre botones y tabla */
+
+  }
+  
+  .botones-derecha {
+    border-radius: 0%;
+    display: flex;
+    gap: 1px; /* Espacio entre los botones */
+    color: #1366a4;
+    color: white;
+    font-size: 12px;
   }

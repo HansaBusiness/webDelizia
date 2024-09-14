@@ -27,6 +27,8 @@ import { ClientesComponent } from './component/clientes/clientes.component';
 import { ProductosComponent } from './component/productos/productos.component';
 import { SucursalesComponent } from './component/sucursales/sucursales.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { MatTableModule } from '@angular/material/table';
     SucursalesComponent
   ],
   imports: [
+    MatMenuModule,
+    MatSortModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,

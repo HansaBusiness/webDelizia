@@ -71,7 +71,7 @@ html, body, app-root {
     background-color: #1366a4; /* Cambia a un color más claro o diferente cuando el cursor está sobre el botón */
     color: white; /* Cambia el color del texto si lo deseas */
   }
-  
+
   button:active,
   button:focus {
     background-color: #1366a4; /* Cambia el color cuando se selecciona */
