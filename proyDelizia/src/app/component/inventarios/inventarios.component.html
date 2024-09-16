@@ -1,4 +1,3 @@
-  <!-- <div class="botones-superiores"> -->
     <mat-form-field appearance="outline" >
       <mat-label class="botonBuscar">Buscar</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Escribir aqui"  #input>    
@@ -7,13 +6,6 @@
     <br>
     <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" />
     <br>
-    <!-- <div class="botones-derecha">
-      <button mat-raised-button>Lista</button>
-      <button mat-raised-button>On-Line</button>
-      <button mat-raised-button>Planificar</button>
-      <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" />
-    </div>
-  </div> -->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
   'CodInventario'
