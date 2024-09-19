@@ -57,6 +57,9 @@
           <button mat-button (click)="selectComponent('inventarios')">
             <mat-icon>list_alt</mat-icon> Inventarios
           </button>
+          <button mat-button (click)="selectComponent('usuarios')">
+            <mat-icon>key_vertical</mat-icon> Usuarios
+          </button>
           <button mat-button (click)="selectComponent('clientes')">
             <mat-icon>group</mat-icon> Nuestros Clientes
           </button>
@@ -73,6 +76,7 @@
 
         <div class="content-container">
           <app-inventarios *ngIf="selectedComponent === 'inventarios'"></app-inventarios>
+          <app-usuarios *ngIf="selectedComponent === 'usuarios'"></app-usuarios>
           <app-clientes *ngIf="selectedComponent === 'clientes'"></app-clientes>
           <app-productos *ngIf="selectedComponent === 'productos'"></app-productos>
           <app-sucursales *ngIf="selectedComponent === 'sucursales'"></app-sucursales>

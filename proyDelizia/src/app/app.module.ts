@@ -29,6 +29,7 @@ import { SucursalesComponent } from './component/sucursales/sucursales.component
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {MatMenuModule} from '@angular/material/menu';
+import { UsuariosComponent } from './component/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MatMenuModule} from '@angular/material/menu';
     InventariosComponent,
     ClientesComponent,
     ProductosComponent,
-    SucursalesComponent
+    SucursalesComponent,
+    UsuariosComponent
   ],
   imports: [
     MatMenuModule,

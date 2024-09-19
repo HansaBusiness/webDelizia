@@ -70,8 +70,8 @@ export class InventariosComponent {
   uploadToFirebase(data: any[]): void {
     data.forEach((row, index) => {
       if (index > 0) { // Omitir la primera fila si son encabezados
-        const [CodInventario, CodUsuario, CodUsuarioFecha, Direccion, Fecha, Id,	LatitudPlan, LongitudPlan, Nombre, Regional,	Supervisor] = row;
-        const newData = { CantItems:'0', CheckAgente:'false', CheckSupervisor:'false', CodInventario, CodUsuario, CodUsuarioFecha, Direccion, Estado:'Pendiente', Fecha,	FechaFin:'1900-01-01 00:00:00',	FechaInicio:'1900-01-01 00:00:00', Id,	LatitudPlan,	LatitudReal:'0.0',	LongitudPlan,	LongitudReal:'0.0',	Nombre, Observacion:'',	Regional,	Supervisor };
+        const [CodInventario, CodUsuario, CodUsuarioFecha, Direccion, Fecha, Id,	LatitudPlan, LongitudPlan, Nombre, Regional,	Supervisor, SupervisorFecha] = row;
+        const newData = { CantItems:'0', CheckAgente:'false', CheckSupervisor:'false', CodInventario, CodUsuario, CodUsuarioFecha, Direccion, Estado:'Pendiente', Fecha,	FechaFin:'1900-01-01 00:00:00',	FechaInicio:'1900-01-01 00:00:00', Id,	LatitudPlan,	LatitudReal:'0.0',	LongitudPlan,	LongitudReal:'0.0',	Nombre, Observacion:'',	Regional,	Supervisor, SupervisorFecha };
         console.log(newData);
         // Enviar cada fila de datos a Firebase
         //this.db.list('Inventarios').push(newData);

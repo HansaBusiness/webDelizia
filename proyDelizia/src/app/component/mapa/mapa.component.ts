@@ -109,8 +109,10 @@ export class MapaComponent implements AfterViewInit {
     });
 
     const infoWindow_agencia = new google.maps.InfoWindow({
-      content: `<div style="background-color: #01b9d6; color: white; padding: 15px; border-radius: 5px;">
+      content: `<div style="background-color: #1366a4; color: white; padding: 15px; border-radius: 5px;">
           <h3 style="margin: 0;">${location.Nombre}</h3>
+          <p style="margin: 5px 0 0;">Agencia : ${location.Direccion} <br>
+          </p>
         </div>`
     });
 

@@ -1,0 +1,81 @@
+<mat-form-field appearance="outline" >
+    <mat-label class="botonBuscar">Buscar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Escribir aqui"  #input>    
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>    
+    <ng-container matColumnDef="Bloqueado">
+      <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> Bloqueado </th>
+      <td mat-cell *matCellDef="let element" class="celda"> {{element.Bloqueado}} </td>
+    </ng-container>
+  
+      <ng-container matColumnDef="CodUsuario">
+        <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> Codigo Usuario </th>
+        <td mat-cell *matCellDef="let element" class="celda"> {{element.CodUsuario}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="Nombre">
+        <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element" class="celda"> {{element.Nombre}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Direccion">
+        <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> Direccion </th>
+        <td mat-cell *matCellDef="let element" class="celda"> {{element.Direccion}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let element" class="celda"> {{element.Email}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Telefono">
+          <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> Telefono </th>
+          <td mat-cell *matCellDef="let element" class="celda"> {{element.Telefono}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="TipoUsuario">
+          <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> TipoUsuario </th>
+          <td mat-cell *matCellDef="let element" class="celda"> {{element.TipoUsuario}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Latitud">
+        <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> Latitud </th>
+        <td mat-cell *matCellDef="let element" class="celda"> {{element.Latitud}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Longitud">
+        <th mat-header-cell *matHeaderCellDef class="cabecera" mat-sort-header> Longitud </th>
+        <td mat-cell *matCellDef="let element" class="celda"> {{element.Longitud}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Acciones">
+        <th mat-header-cell *matHeaderCellDef class="cabecera"> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>  <!-- Ícono de tres puntos verticales -->
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon style="color: #1366a4;">view_list</mat-icon>
+              <span class="celda">Ver detalle</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon style="color: #1366a4;">print</mat-icon>
+              <span class="celda">Imprimir</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon style="color: #1366a4;">import_export</mat-icon>
+              <span class="celda">Exportar xls.</span>
+            </button>
+          </mat-menu>
+        </td>
+      </ng-container>
+    
+      <!-- Header de la tabla -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Filas de la tabla -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>

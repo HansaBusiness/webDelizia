@@ -1,0 +1,9 @@
+.cabecera {
+    font-size: 12px !important;
+    background-color: #f4f1f1 !important; /* Forzamos el estilo con !important */
+  }
+  
+  /* Cambiar tamaño del texto en las celdas de la tabla */
+.celda {
+    font-size: 12px !important; /* Forzamos el estilo con !important */
+  }
